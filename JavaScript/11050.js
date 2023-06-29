@@ -1,19 +1,17 @@
 function solution(input) {
-    let arr = Array.from(Array(11), () => new Array(11))
-    arr[0].fill(1)
-    for (let i = 0; i < 11; i++) {
-        arr[i][0] = 1
-    }
-    for (let i = 1; i < 11; i++) {
-        for (let j = 1; j < 11; j++) {
-            arr[i][j] = arr[i - 1][j] + arr[i][j - 1]
-        }
-    }
     let input0 = input.split(" ").map(Number)
     let n = Number(input0[0])
     let k = Number(input0[1])
-
-    console.log(arr[k][n-k])
+    if (n/2 < k) {
+      k = n-k
+    }
+    let a = 1
+    let b = 1
+    for (let i = 1; i <= k; i++) {
+      a *= n-i+1
+      b *= i
+    }
+    console.log(a/b)
 
 }
 
