@@ -1,4 +1,6 @@
 function solution(input) {
+    // const fs = require('fs');
+    // const input = fs.readFileSync('/dev/stdin').toString().split(' ');
     let num = Number(input);
     if (num == 1) {
         console.log(1)
